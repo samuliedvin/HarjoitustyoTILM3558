@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>harjoitustyö_raportti</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="css/style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="tilastotieteen-harjoitustyö-2018">Tilastotieteen harjoitustyö 2018</h1>
+<blockquote>
+<p>Samuli Virtanen</p>
+<p><a href="mailto:spevir@utu.fi" class="email">spevir@utu.fi</a></p>
+<p>op. nro. 511178</p>
+</blockquote>
+<h2 id="1-numeeristen-vastemuuttujien-mallinnus">1. Numeeristen vastemuuttujien mallinnus</h2>
+<blockquote>
+<p>Elinolo2018 (Tilastokeskuksen elinolotutkimuksen aineisto, N=2199)</p>
+<p>Kukin opiskelija puolestaan poimii 600 kokoisen satunnaisotoksen kyseisestä datasta seuraavalla tavalla:</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode s"><code class="sourceCode gnuassembler"><a class="sourceLine" id="cb1-1" title="1">Transform-Random Number Generators...</a>
+<a class="sourceLine" id="cb1-2" title="2">Set Starting Point-Fixed Value-annetaan oma opiskelijanumero-Ok</a>
+<a class="sourceLine" id="cb1-3" title="3">DATA&gt;SELECT CASES&gt;RANDOM SAMPLE OF CASES&gt;</a>
+<a class="sourceLine" id="cb1-4" title="4">EXACTLY <span class="dv">600</span> CASES FROM THE FIRST <span class="dv">2199</span> CASES</a>
+<a class="sourceLine" id="cb1-5" title="5">CONTINUE</a>
+<a class="sourceLine" id="cb1-6" title="6">UNSELECTED CASES ARE FILTERED&gt;</a></code></pre></div>
+<h3 id="11-varianssianalyysi">1.1. Varianssianalyysi</h3>
+<blockquote>
+<p><em>Tutki, onko sukupuolella ja asumisahtaudella yhteyttä asunnon pinta-alaan.</em></p>
+</blockquote>
+<h4 id="111-suunnitelma">1.1.1. Suunnitelma</h4>
+<p>Kyseessä on kaksi kategorista selittävää muuttujaa, sekä yksi numeerinen selitettävä muuttuja, joten käytetään kaksisuuntaista varianssianalyysiä.</p>
+<h4 id="112-normaalijakaumaoletus">1.1.2. Normaalijakaumaoletus</h4>
+<p>Ensimmäiseksi tutkitaan jakaumia sukupuolittain asumisahtauden perusteella.</p>
+<p>Jaetaan data kahteen osaan sukupuolen perusteella.</p>
+<pre><code>SORT CASES BY supu.
+SPLIT FILE SEPARATE BY supu.</code></pre>
+<p>Luodaan tarvittavat kuviot ja tiedot SPSS:n Explore-työkalulla.</p>
+<pre><code>EXAMINE VARIABLES=pala BY ahtas
+  /PLOT BOXPLOT NPPLOT
+  /COMPARE GROUPS
+  /STATISTICS DESCRIPTIVES
+  /CINTERVAL 95
+  /MISSING LISTWISE
+  /NOTOTAL.</code></pre>
+<p>Tulostedokumentista löytyvän Shapiro-Wilk-testin tulosten perusteella neljä ryhmää ei ole normaalisti jakautunut:</p>
+<ul>
+<li>mies * normaali</li>
+<li>mies * tilava</li>
+<li>nainen * normaali</li>
+<li>nainen * tilava</li>
+</ul>
+<p>Näiden ryhmien havaintojen suuresta määrästä johtuen voidaan kuitenkin käyttää parametrista testiä. Myöskin visuaalinen tarkastelu osoittaa ryhmien olevan jokseenkin normaalijakautuneita.</p>
+<h4 id="113-kaksisuuntainen-varianssianalyysi">1.1.3. Kaksisuuntainen varianssianalyysi</h4>
+<p>Tehdään kaksisuuntainen varianssianalyysi SPSS:n Univariate-työkalulla.</p>
+<pre><code>SPLIT FILE OFF.
+
+UNIANOVA pala BY supu ahtas
+  /METHOD=SSTYPE(3)
+  /INTERCEPT=INCLUDE
+  /PLOT=PROFILE(ahtas*supu)
+  /PRINT=DESCRIPTIVE HOMOGENEITY
+  /CRITERIA=ALPHA(.05)
+  /DESIGN=supu ahtas supu*ahtas.</code></pre>
+<p>Tuloksista nähdään että selittävien muuttujien päävaikutukset ovat merkitseviä merkitsevyystasolla p&lt;0,05, mutta yhdysvaikutus ei ole merkitsevä. (p ≈ 0.638)</p>
+<p>Myöskään hajontojen yhtäsuuruusoletus ei näytä pitävän paikkaansa (Levenen testin p-arvo ≈ 0.014)</p>
+<p>Voidaan tulkita että miehillä on keskimäärin suuremmat asunnot kuin naisilla, ja asunnon pinta-ala kasvaa koetun asumisahtauden mukaan järjestyksessä ahdas -&gt; normaali -&gt; tilava (pienestä pinta-alasta suurempaan). Koska yhdysvaikutuksella ei ole merkitystä, voidaan tulkita että sukupuolella ei ole väliä asumisahtauden eroissa.</p>
+<h4 id="114-monivertailut">1.1.4. Monivertailut</h4>
+<p>Tutkitaan vielä monivertailut estimoiduilla keskiarvoilla.</p>
+<pre><code>UNIANOVA pala BY supu ahtas
+  /METHOD=SSTYPE(3)
+  /INTERCEPT=INCLUDE
+  /PLOT=PROFILE(ahtas*supu)
+  /EMMEANS=TABLES(supu) COMPARE ADJ(SIDAK)
+  /EMMEANS=TABLES(ahtas) COMPARE ADJ(SIDAK)
+  /EMMEANS=TABLES(supu*ahtas) 
+  /PRINT=ETASQ DESCRIPTIVE HOMOGENEITY
+  /CRITERIA=ALPHA(.05)
+  /DESIGN=supu ahtas supu*ahtas.</code></pre>
+<p>Tulostedokumentista löytyvän <em>Pairwise comparisons</em> -taulukon perusteella voidaan todeta kaikkien asumisahtaustasojen välillä olevan tilastollisesti merkittäviä eroja. (p &lt; 0.001)</p>
+<h3 id="12-regressiomalli">1.2. Regressiomalli</h3>
+<blockquote>
+<p>Tutki, onko kotitalouden kuluttajayksiköiden lukumäärällä, asumismenoilla yhteensä ja alueella asumisajalla yhteyttä asunnon pinta-alaan.</p>
+</blockquote>
+<p>Tutkitaan sirontakuvioita.</p>
+<p><img src="./img/regression_scatter.png" alt="Scatter plots" /></p>
+<p>Kovin selkeitä korrelaatioita ei esiinny. Näyttäisi kuitenkin hieman siltä että kodin kuluttajayksiköiden määrän kasvaessa myös asunnon pinta-ala kasvaa ja toisaalta samoin käy myös asumismenojen kasvaessa. Yksi outlier asumismenoissa hankaloittaa hieman kuvan tulkintaa.</p>
+<h3 id="13-toistomittausmalli">1.3. Toistomittausmalli</h3>
+<blockquote>
+<p>Tutkijalla on hypoteesi, että potilaan mielestä saatu ohjaus leikkauksen jälkeen toiminnallista seikoista (Functional_M2) on ollut vähäisempää kuin odotettu ennen leikkausta (Functional_M1). Eli keskiarvo toisessa mittauksessa on matalampi. Lisäksi kiinnostaa se, onko tuo ero mittausten välillä erilainen sukupuolittain.</p>
+<p>Tutki saavatko nämä tutkimushypoteesit tukea mallittamalla aineisto toistettujen mittausten varianssianalyysillä.</p>
+<p>Huom. Numeeristen vastemuuttujien mallituksessa on varianssianalyysien osalta tehtävä tarvittava kuvaileva tarkastelu ja regressiomallissa yhteyksien suoraviivaisuuksien tarkastelu ja jäännöstarkastelu.</p>
+</blockquote>
+</body>
+</html>

@@ -10,3 +10,7 @@ Exercises include stuff like:
 - Logistic regression
 - Principal component analysis
 - K-means clustering
+
+# Raportti
+
+https://samuliedvin.github.io/stats/
